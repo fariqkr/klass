@@ -12,10 +12,10 @@
         <nav class="p-6 bg-white flex justify-between">
             <ul class="flex items-center">
                 <li class="p-3">
-                    <a href="">Home</a>
+                <a href="/">Home</a>
                 </li>
                 <li class="p-3">
-                    <a href="">Dashboard</a>
+                <a href="/dashboard">Dashboard</a>
                 </li>
             </ul>
         </nav>
