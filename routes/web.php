@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Auth\RegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +21,6 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('students.dashboard');
 });
+
+Route::get('/student/register', [RegisterController::class, 'showStudentRegisterForm'])->name('register.student');
+Route::get('/teacher/register', [RegisterController::class, 'showTeacherRegisterForm'])->name('register.teacher');

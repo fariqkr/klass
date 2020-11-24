@@ -8,20 +8,45 @@
 
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     </head>
-    <body class="bg-gray-100">
-        <nav class="p-6 bg-white flex justify-between">
+    <body class="bg-gray-200">
+        <nav class="p-6 bg-white flex justify-between mb-6">
             <ul class="flex items-center">
-                <li class="p-3">
-                <a href="/">Home</a>
+                <li>
+                    <a href="/" class="p-3">Home</a>
                 </li>
-                <li class="p-3">
-                <a href="/dashboard">Dashboard</a>
+                <li>
+                    <a href="/" class="p-3">Student</a>
                 </li>
+                <li>
+                    <a href="/" class="p-3">Teacher</a>
+                </li>
+            </ul>
+
+            <ul class="flex items-center">
+                @auth
+                    <li>
+                        <a href="" class="p-3">Dani Ihza Farrosi</a>
+                    </li>
+                    <li>
+                        <form action="/" method="post" class="p-3 inline">
+                            @csrf
+                            <button type="submit">Logout</button>
+                        </form>
+                    </li>
+                @endauth
+
+                @guest
+                    <li>
+                        <a href="/" class="p-3">Login</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('register.student') }}" class="p-3">Register</a>
+                    </li>
+                @endguest
             </ul>
         </nav>
 
-        <div class="container">
-            @yield('content')
-        </div>
+        @yield('content')
+
     </body>
 </html>
