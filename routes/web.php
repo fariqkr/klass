@@ -22,5 +22,9 @@ Route::get('/dashboard', function () {
     return view('students.dashboard');
 });
 
+Route::get('/login', function () {
+    return view('auth.login');
+});
+
 Route::get('/student/register', [RegisterController::class, 'showStudentRegisterForm'])->name('register.student');
 Route::get('/teacher/register', [RegisterController::class, 'showTeacherRegisterForm'])->name('register.teacher');
