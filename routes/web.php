@@ -27,4 +27,7 @@ Route::get('/login', function () {
 });
 
 Route::get('/student/register', [RegisterController::class, 'showStudentRegisterForm'])->name('register.student');
+Route::post('/student/register', [RegisterController::class, 'registerStudent']);
+
 Route::get('/teacher/register', [RegisterController::class, 'showTeacherRegisterForm'])->name('register.teacher');
+Route::post('/teacher/register', [RegisterController::class, 'showTeacherRegisterForm']);
