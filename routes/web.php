@@ -1,7 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,18 +14,20 @@ use App\Http\Controllers\Auth\RegisterController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('test', function () {
+    dd(Auth::guard('student'));
+});
 
 Route::get('/', function () {
     return view('home');
-});
+})->name('home');
 
 Route::get('/dashboard', function () {
     return view('students.dashboard');
 });
 
-Route::get('/login', function () {
-    return view('auth.login');
-});
+Route::get('/student/login', [LoginController::class, 'showStudentLoginForm'])->name('login.student');
+Route::get('/teacher/login', [LoginController::class, 'showTeacherLoginForm'])->name('login.teacher');
 
 Route::get('/student/register', [RegisterController::class, 'showStudentRegisterForm'])->name('register.student');
 Route::post('/student/register', [RegisterController::class, 'registerStudent']);

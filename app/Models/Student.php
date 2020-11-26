@@ -23,6 +23,7 @@ class Student extends Authenticatable
 
     protected $casts = [
         'classroom_joined' => 'array',
+        'email_verified_at' => 'datetime',
     ];
 
 }

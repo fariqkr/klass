@@ -17,7 +17,7 @@
                         <p class="pt-2 text-black">Currently signing up as <span class="font-bold text-black">Student</span>.</p>
                     <p class="pb-4 text-gray-500 text-sm"> or sign up as Teacher <a class="underline" href="{{route('register.teacher')}}">here</a></p>
                     </div>
-                    <form action="" method="post">
+                    <form action="{{ route('register.student') }}" method="POST">
                         @csrf
                         <div class="mb-4">
                             <label for="name" class="sr-only">Name</label>
