@@ -30,3 +30,7 @@ Route::post('/teacher/register', [RegisterController::class, 'showTeacherRegiste
 
 Route::get('/student/dashboard', [StudentController::class, 'index'])->name('student.dashboard');
 Route::get('/teacher/dashboard', [TeacherController::class, 'index'])->name('teacher.dashboard');
+
+Route::get('/student/dashboard', function () {
+    return view('student.dashboard');
+});
