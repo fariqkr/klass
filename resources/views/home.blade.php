@@ -6,15 +6,15 @@
     <div class="container mx-auto flex justify-between">
         <ul class="flex items-center">
             <li>
-                <a href="/"> 
+                <a href="/">
                     <img src="{{asset('img/logo.PNG')}}" alt="Klass" style="height: 45px;" class="mx-8">
                 </a>
             </li>
         </ul>
         <ul class="flex items-center">
-            @auth
+            @auth('student')
                 <li>
-                    <a href="/" class="p-3 mx-1 text-blue-500 font-bold hover:text-blue-700"> Your Name </a>
+                    <a href="/" class="p-3 mx-1 text-blue-500 font-bold hover:text-blue-700">{{ auth()->guard('student')->user()->name }}</a>
                 </li>
                 <li>
                     <form action="/" method="post" class="inline p-3 text-white bg-blue-500 rounded hover:bg-blue-700">
@@ -23,7 +23,7 @@
                     </form>
                 </li>
             @endauth
-            @guest
+            @guest('student')
                 <li>
                     <a href="{{ route('register.student') }}" class="p-3 text-white bg-blue-500 rounded hover:bg-blue-700"> Login / Signup </a>
                 </li>
@@ -42,11 +42,11 @@
             <a href="#" >Sign Up Now</a>
         </button>
     </div>
-    
+
     <div class="w-full xl:w-3/5 py-6 overflow-y-hidden">
         <img class="w-4/6 mx-auto lg:mr-0" src="http://www.pngall.com/wp-content/uploads/5/Learning-PNG-Free-Download.png">
     </div>
-    </div>	
+    </div>
 </section>
 
 @endsection

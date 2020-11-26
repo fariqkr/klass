@@ -33,6 +33,6 @@ class RegisterController extends Controller
 
         Auth::guard('student')->attempt($request->only('email', 'password'));
 
-        return redirect()->route('home');
+        return redirect()->route('student.dashboard');
     }
 }
