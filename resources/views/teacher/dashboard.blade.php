@@ -10,7 +10,7 @@
         </div>
         <div class="text-center mb-8">
             <button class="py-1 px-9 bg-blue-500 text-white rounded hover:bg-blue-700">
-                <a href="#">Join a class</a>
+                <a href="#">Create a class</a>
             </button>
         </div>
         <div class="text-center border-r-2 border-blue-500">
@@ -19,8 +19,52 @@
             </button>
         </div>
     </div>
-    <div class="h-screen bg-gray-100">
-        Ayam
+    <div class="bg-gray-100 pt-7">
+        <div class="container">
+            <div class="mb-12 text-black text-4xl font-bold">
+                <h1 class="pl-12">My Class</h1>
+            </div>
+            <div class="container w-full">
+                <a href="#">
+                    <div class="flex flex-wrap flex-col md:flex-row items-center bg-white my-8 w-9/12 mx-auto rounded-lg">
+                        <div class="flex flex-col xl:w-2/5 overflow-y-hidden lg:items-start pl-4">
+                            <h1 class="text-xl text-black text-left mb-4">Pengolahan Citra Digital</h1>
+                            <h1 class="text-sm text-blacktext-left">Wahyono, Ph.D</h1>
+                            <p class="text-sm text-left">Universitas Gadjah Mada</p>
+                        </div>
+                        <div class="xl:w-3/5 overflow-y-hidden rounded-lg">
+                            <img class="w-full rounded-lg" src="{{asset('img/logo.PNG')}}">
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#">
+                    <div class="flex flex-wrap flex-col md:flex-row items-center bg-white my-8 w-9/12 mx-auto rounded-lg">
+                        <div class="flex flex-col xl:w-2/5 overflow-y-hidden lg:items-start pl-4">
+                            <h1 class="text-xl text-black text-left mb-4">Algoritma Lanjut</h1>
+                            <h1 class="text-sm text-blacktext-left">Wahyono, Ph.D</h1>
+                            <p class="text-sm text-left">Universitas Gadjah Mada</p>
+                        </div>
+                        <div class="xl:w-3/5 overflow-y-hidden rounded-lg">
+                            <img class="w-full rounded-lg" src="{{asset('img/logo.PNG')}}">
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#">
+                    <div class="flex flex-wrap flex-col md:flex-row items-center bg-white my-8 w-9/12 mx-auto rounded-lg">
+                        <div class="flex flex-col xl:w-2/5 overflow-y-hidden lg:items-start pl-4">
+                            <h1 class="text-xl text-black text-left mb-4">Jaringan Syaraf Tiruan</h1>
+                            <h1 class="text-sm text-blacktext-left">Wahyono, Ph.D</h1>
+                            <p class="text-sm text-left">Universitas Gadjah Mada</p>
+                        </div>
+                        <div class="xl:w-3/5 overflow-y-hidden rounded-lg">
+                            <img class="w-full rounded-lg" src="{{asset('img/logo.PNG')}}">
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
     </div>
     <div class="h-screen bg-white pt-6">
         <div class="mb-6 text-black text-base text-center">
