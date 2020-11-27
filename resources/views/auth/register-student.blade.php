@@ -20,9 +20,9 @@
                     <form action="{{ route('register.student') }}" method="POST">
                         @csrf
                         <div class="mb-4">
-                            <label for="name" class="sr-only">Name</label>
-                            <input type="text" name="name" id="name" placeholder="Your name"
-                        class="bg-gray-100 border-2 w-full p-4 rounded-lg @error('name') border-red-500 @enderror" value="{{ old('name') }}">
+                            <label for="name" class="uppercase tracking-wide text-gray text-xs font-bold">Nama Lengkap</label>
+                            <input type="text" name="name" id="name" placeholder="Nama"
+                            class="bg-gray-100 border-2 w-full p-4 rounded-lg @error('name') border-red-500 @enderror" value="{{ old('name') }}">
 
                             @error('name')
                                 <div class="text-red-500 mt-2 text-sm">
@@ -32,7 +32,7 @@
                         </div>
 
                         <div class="mb-4">
-                            <label for="email" class="sr-only">Email</label>
+                            <label for="email" class="uppercase tracking-wide text-gray text-xs font-bold">Email</label>
                             <input type="text" name="email" id="email" placeholder="Email"
                             class="bg-gray-100 border-2 w-full p-4 rounded-lg @error('email') border-red-500 @enderror" value="{{ old('email') }}">
 
@@ -44,7 +44,7 @@
                         </div>
 
                         <div class="mb-4">
-                            <label for="password" class="sr-only">Password</label>
+                            <label for="password" class="uppercase tracking-wide text-gray text-xs font-bold">Password</label>
                             <input type="password" name="password" id="password" placeholder="Password"
                             class="bg-gray-100 border-2 w-full p-4 rounded-lg @error('password') border-red-500 @enderror" value="">
 
@@ -56,7 +56,7 @@
                         </div>
 
                         <div class="mb-4">
-                            <label for="password_confirmation" class="sr-only">Confirm Password</label>
+                            <label for="password_confirmation" class="uppercase tracking-wide text-gray text-xs font-bold">Ulangi password</label>
                             <input type="password" name="password_confirmation" id="password_confirmation" placeholder="Confirm password"
                             class="bg-gray-100 border-2 w-full p-4 rounded-lg @error('password_confirmation') border-red-500 @enderror" value="">
 

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
 
@@ -26,11 +27,7 @@ Route::get('/student/register', [RegisterController::class, 'showStudentRegister
 Route::post('/student/register', [RegisterController::class, 'registerStudent']);
 
 Route::get('/teacher/register', [RegisterController::class, 'showTeacherRegisterForm'])->name('register.teacher');
-Route::post('/teacher/register', [RegisterController::class, 'showTeacherRegisterForm']);
+Route::post('/teacher/register', [RegisterController::class, 'registerTeacher']);
 
 Route::get('/student/dashboard', [StudentController::class, 'index'])->name('student.dashboard');
 Route::get('/teacher/dashboard', [TeacherController::class, 'index'])->name('teacher.dashboard');
-
-Route::get('/student/dashboard', function () {
-    return view('student.dashboard');
-});

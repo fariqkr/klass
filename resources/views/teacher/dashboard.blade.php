@@ -4,8 +4,9 @@
 
 <div class="grid" style="grid-template-columns: 1fr 4fr 1fr;">
     <div class="h-screen bg-white pt-6">
+        <h1>TEACHER DASHBOARD</h1>
         <div class="mb-6">
-            <img src="{{asset('img/logo.PNG')}}" alt="Klass" style="height: 55px;" class="mx-auto">
+            <img src="{{ asset('img/logo.PNG') }}" alt="Klass" style="height: 55px;" class="mx-auto">
         </div>
         <div class="text-center mb-8">
             <button class="py-1 px-9 bg-blue-500 text-white rounded hover:bg-blue-700">
@@ -23,7 +24,7 @@
     </div>
     <div class="h-screen bg-white pt-6">
         <div class="mb-6 text-black text-base text-center">
-                <a href="#">{{ auth()->guard('student')->user()->name }}</a>
+                <a href="#">{{ auth()->guard('teacher')->user()->name }}</a>
                 <button class="px-1 pb-1 bg-red-500 text-white rounded hover:bg-red-600 ml-6">
                     <a href="#" class="text-xs">Logout</a>
                 </button>
