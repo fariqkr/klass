@@ -6,12 +6,13 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Database\Eloquent\Model;
 
-class Student extends Authenticatable
+class Teacher extends Authenticatable
 {
     use HasFactory;
 
     protected $fillable = [
         'name',
+        'school_name',
         'email',
         'password'
     ];
@@ -22,8 +23,7 @@ class Student extends Authenticatable
     ];
 
     protected $casts = [
-        'classroom_joined' => 'array',
+        'classroom_teached' => 'array',
         'email_verified_at' => 'datetime',
     ];
-
 }
