@@ -29,8 +29,8 @@ Route::post('/student/register', [RegisterController::class, 'registerStudent'])
 Route::get('/teacher/register', [RegisterController::class, 'showTeacherRegisterForm'])->name('register.teacher');
 Route::post('/teacher/register', [RegisterController::class, 'registerTeacher']);
 
-Route::get('/student/dashboard', [StudentController::class, 'index'])->name('student.home.dashboard');
-Route::get('/teacher/dashboard', [TeacherController::class, 'index'])->name('teacher.home.dashboard');
+Route::get('/student/dashboard', [StudentController::class, 'index'])->name('student.dashboard');
+Route::get('/teacher/dashboard', [TeacherController::class, 'index'])->name('teacher.dashboard');
 
 Route::get('/student/join', function () {
     return view('student.home.joinclass');
@@ -41,6 +41,16 @@ Route::get('/teacher/createclass', function () {
 
 Route::get('/teacher/createsubjectmatter', function () {
     return view('teacher.class.createsubjectmatter');
+});
+
+Route::get('/teacher/createassignment', function () {
+    return view('teacher.class.createassignment');
+});
+Route::get('/teacher/createquiztest', function () {
+    return view('teacher.class.createquiztest');
+});
+Route::get('/teacher/createtask', function () {
+    return view('teacher.class.createtask');
 });
 
 Route::get('/student/subjectmatter', function () {

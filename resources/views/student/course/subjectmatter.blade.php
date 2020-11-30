@@ -17,6 +17,7 @@
             </button>
         </div>
 @endsection
+
 @section('maincontent')
         <div class="container">
             <div class="flex flex-wrap flex-col md:flex-row items-center bg-white mt-2 mb-10 w-9/12 mx-auto rounded-lg">
