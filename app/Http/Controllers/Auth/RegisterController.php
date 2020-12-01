@@ -29,6 +29,7 @@ class RegisterController extends Controller
 
         Student::create([
             'name' => $request->name,
+            'nickname' => $request->nickname,
             'email' => $request->email,
             'password' => Hash::make($request->password)
         ]);
@@ -49,6 +50,7 @@ class RegisterController extends Controller
 
         Teacher::create([
             'name' => $request->name,
+            'nickname' => $request->nickname,
             'school_name' => $request->school_name,
             'email' => $request->email,
             'password' => Hash::make($request->password)
