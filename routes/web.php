@@ -21,7 +21,10 @@ Route::get('/', function () {
 })->name('home');
 
 Route::get('/student/login', [LoginController::class, 'showStudentLoginForm'])->name('login.student');
+Route::post('/student/login', [LoginController::class, 'loginStudent'])->name('login.student');
+
 Route::get('/teacher/login', [LoginController::class, 'showTeacherLoginForm'])->name('login.teacher');
+Route::post('/teacher/login', [LoginController::class, 'loginTeacher'])->name('login.teacher');
 
 Route::get('/student/register', [RegisterController::class, 'showStudentRegisterForm'])->name('register.student');
 Route::post('/student/register', [RegisterController::class, 'registerStudent']);

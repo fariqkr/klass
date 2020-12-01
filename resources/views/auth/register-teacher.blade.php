@@ -8,21 +8,21 @@
             </div>
             <div class="flex flex-col w-full xl:w-5/12 justify-center overflow-y-hidden">
                 <div class="bg-blue-500 px-4 py-8">
-                    <a class="text-gray-600 font-extrabold text-center text-3xl inline mx-9" href="/login"> LOGIN </a>
+                    <a class="text-gray-600 font-extrabold text-center text-3xl inline mx-9" href="{{ route('login.teacher') }}"> LOGIN </a>
                     <p class="text-black font-extrabold text-center text-3xl inline mx-9 "> | </p>
-                    <a class="text-blck font-extrabold text-center text-3xl inline mx-9" href="/signup"> SIGN UP </a>
+                    <span class="text-blck font-extrabold text-center text-3xl inline mx-9"> SIGN UP </span>
                 </div>
                 <div class="bg-white pt-2 pb-8 px-20">
                     <div>
                         <p class="pt-2 text-black">Currently signing up as <span class="font-bold text-black">Teacher</span>.</p>
                     <p class="pb-4 text-gray-500 text-sm"> or sign up as Student <a class="underline" href="{{route('register.student')}}">here</a></p>
                     </div>
-                    <form action="" method="post">
+                    <form action="{{ route('register.teacher') }}" method="POST">
                         @csrf
                         <div class="mb-4">
                             <label for="name" class="uppercase tracking-wide text-gray text-xs font-bold">Nama Lengkap</label>
                             <input type="text" name="name" id="name" placeholder="Nama"
-                            class="bg-gray-100 border-2 w-full p-4 rounded-lg mt-3 @error('name') border-red-500 @enderror" value="{{ old('name') }}">
+                            class="bg-gray-100 border-2 w-full p-4 rounded-lg @error('name') border-red-500 @enderror" value="{{ old('name') }}">
 
                             @error('name')
                                 <div class="text-red-500 mt-2 text-sm">

@@ -8,7 +8,7 @@
             </div>
             <div class="flex flex-col w-full xl:w-5/12 justify-center overflow-y-hidden">
                 <div class="bg-blue-500 px-4 py-8">
-                    <a class="text-gray-600 font-extrabold text-center text-3xl inline mx-9" href="/login"> LOGIN </a>
+                    <a class="text-gray-600 font-extrabold text-center text-3xl inline mx-9" href="{{ route('login.student') }}"> LOGIN </a>
                     <p class="text-black font-extrabold text-center text-3xl inline mx-9 "> | </p>
                     <span class="text-blck font-extrabold text-center text-3xl inline mx-9"> SIGN UP </span>
                 </div>
