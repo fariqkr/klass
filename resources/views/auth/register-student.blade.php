@@ -7,10 +7,10 @@
                 <img class="w-5/6 lg:mr-0" src="http://www.pngall.com/wp-content/uploads/5/Learning-PNG-Free-Download.png">
             </div>
             <div class="flex flex-col w-full xl:w-5/12 justify-center overflow-y-hidden">
-                <div class="bg-blue-500 px-4 py-8">
-                    <a class="text-gray-600 font-extrabold text-center text-3xl inline mx-9" href="{{ route('login.student') }}"> LOGIN </a>
-                    <p class="text-black font-extrabold text-center text-3xl inline mx-9 "> | </p>
-                    <span class="text-blck font-extrabold text-center text-3xl inline mx-9"> SIGN UP </span>
+                <div class="bg-blue-500 px-4 py-8 flex gap-2">
+                    <a class="text-gray-600 font-extrabold text-center text-3xl inline mx-auto" href="{{ route('login.student') }}"> LOGIN </a>
+                    <p class="text-black font-extrabold text-center text-3xl inline mx-auto"> | </p>
+                    <span class="text-blck font-extrabold text-center text-3xl inline mx-auto"> SIGN UP </span>
                 </div>
                 <div class="bg-white pt-2 pb-8 px-20">
                     <div>

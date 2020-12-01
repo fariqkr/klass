@@ -8,14 +8,14 @@
             <img class="w-5/6 lg:mr-0" src="http://www.pngall.com/wp-content/uploads/5/Learning-PNG-Free-Download.png">
         </div>
         <div class="flex flex-col w-full xl:w-5/12 justify-center overflow-y-hidden">
-            <div class="bg-blue-500 px-4 py-8">
-                <span class="text-black font-extrabold text-center text-3xl inline mx-9"> LOGIN </span>
-                <p class="text-black font-extrabold text-center text-3xl inline mx-9 "> | </p>
-                <a class="text-gray-600 font-extrabold text-center text-3xl inline mx-9" href="{{ route('register.teacher') }}"> SIGN UP </a>
+            <div class="bg-blue-500 px-4 py-8 flex gap-2">
+                <span class="text-black font-extrabold text-center text-3xl inline mx-auto"> LOGIN </span>
+                <p class="text-black font-extrabold text-center text-3xl inline mx-auto"> | </p>
+                <a class="text-gray-600 font-extrabold text-center text-3xl inline mx-auto" href="{{ route('register.teacher') }}"> SIGN UP </a>
             </div>
             <div class="bg-white pb-16 pt-5 px-20">
                 <div>
-                    <p class="pt-2 text-black">Currently loging in as <span class="font-bold text-black">Teacher</span>.</p>
+                    <p class="pt-2 text-black">Currently logging in as <span class="font-bold text-black">Teacher</span>.</p>
                     <p class="pb-4 text-gray-500 text-sm"> or login as Student <a class="underline" href="{{route('login.student')}}">here</a></p>
                     @if (session('status'))
                         <div class="bg-red-400 p-4 rounded-lg mb-6 text-white text-center">
