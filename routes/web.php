@@ -78,6 +78,7 @@ Route::middleware('guest.custom')->group(function () {
     Route::get('/teacher/login', [LoginController::class, 'showTeacherLoginForm'])->name('login.teacher');
     Route::post('/teacher/login', [LoginController::class, 'loginTeacher'])->name('login.teacher');
 
-    Route::post('/student/logout', [LogoutController::class, 'logoutStudent'])->name('logout.student');
-    Route::post('/teacher/logout', [LogoutController::class, 'logoutTeacher'])->name('logout.teacher');
 });
+
+Route::post('/student/logout', [LogoutController::class, 'logoutStudent'])->name('logout.student');
+Route::post('/teacher/logout', [LogoutController::class, 'logoutTeacher'])->name('logout.teacher');
