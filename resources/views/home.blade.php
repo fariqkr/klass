@@ -34,7 +34,7 @@
                 </li>
             @else
                 <li>
-                    <a href="{{ route('register.student') }}" class="p-3 text-white bg-blue-500 rounded hover:bg-blue-700"> Login / Signup </a>
+                    <a href="{{ route('login.student') }}" class="p-3 text-white bg-blue-500 rounded hover:bg-blue-700"> Login / Signup </a>
                 </li>
             @endif
         </ul>
@@ -48,12 +48,12 @@
         <h1 class="my-4 text-3xl md:text-5xl text-black font-bold leading-tight text-center md:text-left">Maintain your online classes</h1>
         <p class="text-base md:text-2xl mb-8 text-center md:text-left">Get a free and easy tool to help educators efficiently manage and assess progress, while enhancing connections with learners from school, from home, or on the go.</p>
         <button class="p-4 bg-blue-500 text-white rounded-lg hover:bg-blue-700">
-            <a href="#" >Sign Up Now</a>
+            <a href="{{ route('register.student') }}" >Sign Up Now</a>
         </button>
     </div>
 
     <div class="w-full xl:w-3/5 py-6 overflow-y-hidden">
-        <img class="w-4/6 mx-auto lg:mr-0" src="http://www.pngall.com/wp-content/uploads/5/Learning-PNG-Free-Download.png">
+        <img class="w-4/6 mx-auto lg:mr-0" src="{{ asset('img/landing-illustration.png') }}">
     </div>
     </div>
 </section>

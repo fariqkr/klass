@@ -22,6 +22,7 @@ class RegisterController extends Controller
     public function registerStudent(Request $request) {
         $this->validate($request, [
             'name' => 'required|max:255',
+            'nickname' => 'required|max:255',
             'email' => 'required|email|unique:students|max:255',
             'password' => 'required|confirmed',
         ]);
@@ -40,6 +41,7 @@ class RegisterController extends Controller
     public function registerTeacher(Request $request) {
         $this->validate($request, [
             'name' => 'required|max:255',
+            'nickname' => 'required|max:255',
             'school_name' => 'required|max:255',
             'email' => 'required|email|unique:teachers|max:255',
             'password' => 'required|confirmed',

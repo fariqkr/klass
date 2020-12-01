@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.text-underline-custom {
+    border-bottom: 5px rgba(223, 77, 102, 1) solid;
+}

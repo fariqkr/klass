@@ -5,13 +5,13 @@
 <section class="bg-gradient-to-r from-blue-300 to-green-400 pt-12 pb-16 md:pt-8 px-8 h-screen" id="login">
     <div class="container mx-auto flex flex-wrap flex-col md:flex-row items-center px-10">
         <div class="w-full xl:w-7/12 py-6 overflow-y-hidden">
-            <img class="w-5/6 lg:mr-0" src="http://www.pngall.com/wp-content/uploads/5/Learning-PNG-Free-Download.png">
+            <img class="w-5/6 lg:mr-0" src="{{ asset('img/student-illustration.png') }}">
         </div>
         <div class="flex flex-col w-full xl:w-5/12 justify-center overflow-y-hidden">
             <div class="bg-blue-500 px-4 py-8">
-                <span class="text-black font-extrabold text-center text-3xl inline mx-9"> LOGIN </span>
+                <span class="text-black font-extrabold text-center text-3xl inline mx-9 text-underline-custom"> LOGIN </span>
                 <p class="text-black font-extrabold text-center text-3xl inline mx-9 "> | </p>
-                <a class="text-gray-600 font-extrabold text-center text-3xl inline mx-9" href="{{ route('register.student') }}"> SIGN UP </a>
+                <a class="text-gray-600 hover:text-black font-extrabold text-center text-3xl inline mx-9" href="{{ route('register.student') }}"> SIGN UP </a>
             </div>
             <div class="bg-white pb-16 pt-5 px-20">
                 <div>
