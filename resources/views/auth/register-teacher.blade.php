@@ -7,10 +7,10 @@
                 <img class="w-5/6 lg:mr-0" src="{{ asset('img/teacher-illustration.svg') }}">
             </div>
             <div class="flex flex-col w-full xl:w-5/12 justify-center overflow-y-hidden">
-                <div class="bg-blue-500 px-4 py-8">
-                    <a class="text-gray-600 hover:text-black font-extrabold text-center text-3xl inline mx-9" href="{{ route('login.teacher') }}"> LOGIN </a>
-                    <p class="text-black font-extrabold text-center text-3xl inline mx-9 "> | </p>
-                    <span class="text-black font-extrabold text-center text-3xl inline mx-9 text-underline-custom"> SIGN UP </span>
+                <div class="bg-blue-500 px-4 py-8 flex gap-2">
+                    <a class="text-gray-600 font-extrabold text-center text-3xl inline mx-auto" href="{{ route('login.teacher') }}"> LOGIN </a>
+                    <p class="text-black font-extrabold text-center text-3xl inline mx-auto"> | </p>
+                    <span class="text-blck font-extrabold text-center text-3xl inline mx-auto text-underline-custom"> SIGN UP </span>
                 </div>
                 <div class="bg-white pt-2 pb-8 px-20">
                     <div>
