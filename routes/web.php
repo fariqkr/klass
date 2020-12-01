@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\StudentController;
@@ -20,17 +21,20 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 
+Route::get('/student/register', [RegisterController::class, 'showStudentRegisterForm'])->name('register.student');
+Route::post('/student/register', [RegisterController::class, 'registerStudent']);
+
+Route::get('/teacher/register', [RegisterController::class, 'showTeacherRegisterForm'])->name('register.teacher');
+Route::post('/teacher/register', [RegisterController::class, 'registerTeacher']);
+
 Route::get('/student/login', [LoginController::class, 'showStudentLoginForm'])->name('login.student');
 Route::post('/student/login', [LoginController::class, 'loginStudent'])->name('login.student');
 
 Route::get('/teacher/login', [LoginController::class, 'showTeacherLoginForm'])->name('login.teacher');
 Route::post('/teacher/login', [LoginController::class, 'loginTeacher'])->name('login.teacher');
 
-Route::get('/student/register', [RegisterController::class, 'showStudentRegisterForm'])->name('register.student');
-Route::post('/student/register', [RegisterController::class, 'registerStudent']);
-
-Route::get('/teacher/register', [RegisterController::class, 'showTeacherRegisterForm'])->name('register.teacher');
-Route::post('/teacher/register', [RegisterController::class, 'registerTeacher']);
+Route::post('student/logout', [LogoutController::class, 'logoutStudent'])->name('logout.student');
+Route::post('teacher/logout', [LogoutController::class, 'logoutTeacher'])->name('logout.teacher');
 
 Route::get('/student/dashboard', [StudentController::class, 'index'])->name('student.dashboard');
 Route::get('/teacher/dashboard', [TeacherController::class, 'index'])->name('teacher.dashboard');
