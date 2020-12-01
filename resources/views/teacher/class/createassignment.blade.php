@@ -31,37 +31,22 @@
                 </div>
             </div>
             <div class="container w-full">
-                <a href="#">
-                    <div class="bg-white w-4/12 mx-auto my-6 rounded flex bg-gray-200 hover:bg-gray-300">
-                        <h1 class="text-black text-base w-10/12 px-4 py-4">Create New Assignment</h1>
-                        <h1 class="text-black text-base italic font-extrabold w-2/12 px-4 py-4">+</h1>
-                     </div> 
-                 </a>
-
                 <div class="my-4 text-black text-xl font-bold mx-auto w-9/12">
-                    <h1>Assignment :</h1>
+                    <h1> Select the type of assignment :</h1>
                 </div>
-
-                <a href="#">
-                    <div class="bg-white w-9/12 mx-auto px-4 py-4 my-6 rounded">
-                        <h1 class="text-black text-base">Lorem ipsum dolor sit amet consectetur.</h1>
-                     </div> 
-                 </a>
-                 <a href="#">
-                    <div class="bg-white w-9/12 mx-auto px-4 py-4 my-6 rounded">
-                        <h1 class="text-black text-base">Lorem ipsum, dolor sit amet consectetur adipisicing.</h1>
-                     </div> 
-                 </a>
-                 <a href="#">
-                    <div class="bg-white w-9/12 mx-auto px-4 py-4 my-6 rounded">
-                        <h1 class="text-black text-base">Lorem ipsum dolor sit amet.</h1>
-                     </div> 
-                 </a>
-                 <a href="#">
-                    <div class="bg-white w-9/12 mx-auto px-4 py-4 my-6 rounded">
-                        <h1 class="text-black text-base">Lorem ipsum dolor sit amet consectetur.</h1>
-                     </div> 
-                 </a>
+                
+                <div class="container flex flex-nowrap justify-center gap-8">
+                        <a href="#">
+                            <div class="bg-white my-6 rounded flex col justify-center items-center bg-blue-100 hover:bg-blue-300" style="width: 20rem; height: 20rem;">
+                                <h1 class="text-black text-small font-bold">Quiz / Test</h1>
+                            </div> 
+                        </a>
+                        <a href="#">
+                            <div class="bg-white my-6 rounded flex col justify-center items-center bg-green-100 hover:bg-green-300" style="width: 20rem; height: 20rem;">
+                                <h1 class="text-black text-small font-bold">Task</h1>
+                            </div> 
+                        </a>
+                    </div>
             </div>
         </div>
 @endsection
