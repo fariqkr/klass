@@ -69,10 +69,6 @@
                                     </div>
                                 @enderror
                             </div>
-
-                            <div>
-                                <label for="deadline" class="tracking-wide text-gray text-base font-bold pb-4">Deadline :</label>
-                            </div>
                             
                             <div>
                                 <button type="submit" class="bg-green-400 text-white px-4 py-3 rounded font-medium w-20 hover:bg-green-500">Create</button>

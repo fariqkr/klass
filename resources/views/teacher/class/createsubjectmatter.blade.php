@@ -1,4 +1,4 @@
-@extends('layouts.studentcourse')
+@extends('layouts.teachercourse')
 
 @section('nav')
         <div class="text-center my-2 border-r-2 border-blue-500">

@@ -29,8 +29,14 @@ Route::middleware('auth.student')->group(function () {
     Route::get('/student/subjectmatter', function () {
         return view('student.course.subjectmatter');
     });
+    Route::get('/student/subjectmatter/Test', function () {
+        return view('student.class.subjectmatter');
+    });
     Route::get('/student/assignment', function () {
         return view('student.course.assignment');
+    });
+    Route::get('/student/assignment/Task1', function () {
+        return view('student.class.task');
     });
     Route::get('/student/review', function () {
         return view('student.course.review');
@@ -53,6 +59,9 @@ Route::middleware('auth.teacher')->group(function () {
     });
     Route::get('/teacher/createtask', function () {
         return view('teacher.class.createtask');
+    });
+    Route::get('/teacher/inputtask', function () {
+        return view('teacher.class.inputtask');
     });
     Route::get('/teacher/subjectmatter', function () {
         return view('teacher.course.subjectmatter');
