@@ -1,8 +1,8 @@
 @extends('layouts.teacherhome')
 
 @section('maincontent')
-        <div class="container px-5">
-            <div class="mb-12 text-black text-4xl font-bold">
+        <div class="container">
+            <div class="mb-12 ml-12 text-black text-4xl font-bold">
                 <h1 class="">My Class</h1>
             </div>
             <div class="container w-full">
@@ -23,7 +23,7 @@
                         </a>
                     @endforeach
                 @else
-                    <p>You don't have any classroom yet</p>
+                    <p class="ml-12">You don't have any classroom yet</p>
                 @endif
             </div>
         </div>

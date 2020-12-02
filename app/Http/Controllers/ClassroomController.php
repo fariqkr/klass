@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Classroom;
+use App\Models\SubjectMatter;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 
@@ -25,19 +26,4 @@ class ClassroomController extends Controller
         return redirect()->route('teacher.dashboard');
     }
 
-    public function indexSubjectMatter(Classroom $classroom) {
-        return view('teacher.course.subjectmatter', [
-            'classroom' => $classroom
-        ]);
-    }
-
-    public function showSubjectMatter(Classroom $classroom) {
-        return view('teacher.course.subjectmatter', [
-            'classroom' => $classroom
-        ]);
-    }
-
-    public function createSubjectMatter(Classroom $classroom) {
-        return view('teacher.class.createsubjectmatter');
-    }
 }

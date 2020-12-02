@@ -31,7 +31,7 @@
                 </div>
             </div>
             <div class="container w-full">
-                <a href="#">
+                <a href="{{ route('subjectmatter.create', $classroom->id) }}">
                     <div class="bg-white w-4/12 mx-auto my-6 rounded flex bg-gray-200 hover:bg-gray-300">
                         <h1 class="text-black text-base w-10/12 px-4 py-4">Create New Subject Matter</h1>
                         <h1 class="text-black text-base italic font-extrabold w-2/12 px-4 py-4">+</h1>
@@ -42,11 +42,13 @@
                     <h1>Subject Matter :</h1>
                 </div>
 
-                <a href="#">
-                   <div class="bg-white w-9/12 mx-auto px-4 py-4 my-6 rounded border-2 hover:border-gray-600">
-                       <h1 class="text-black text-base italic">Test</h1>
-                    </div>
-                </a>
+                @foreach ($subjects as $subject)
+                    <a href="{{ $subject->path() }}">
+                    <div class="bg-white w-9/12 mx-auto px-4 py-4 my-6 rounded border-2 hover:border-gray-600">
+                        <h1 class="text-black text-base italic">{{ $subject->title }}</h1>
+                        </div>
+                    </a>
+                @endforeach
             </div>
         </div>
 @endsection

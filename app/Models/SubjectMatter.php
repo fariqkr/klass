@@ -14,4 +14,12 @@ class SubjectMatter extends Model
         'url',
         'content'
     ];
+
+    public function classroom() {
+        return $this->belongsTo(Classroom::class);
+    }
+
+    public function path() {
+        return "/teacher/classroom/{$this->classroom->id}/subject-matter/{$this->id}";
+    }
 }

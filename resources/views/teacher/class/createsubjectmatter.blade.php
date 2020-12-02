@@ -3,7 +3,7 @@
 @section('nav')
         <div class="text-center my-2 border-r-2 border-blue-500">
             <button class="py-1 px-9 bg-white text-black rounded">
-                <a href="#" class="text-sm">Subject Matter</a>
+                <a href="{{ route('subjectmatter', $classroom->id) }}" class="text-sm">Subject Matter</a>
             </button>
         </div>
         <div class="text-center my-2">
@@ -25,7 +25,7 @@
             </div>
             <div class="container">
                 <div class="flex flex-wrap flex-col md:flex-row items-center my-8 pl-12 mx-auto rounded-lg">
-                    <form action="" method="POST">
+                    <form action="{{ route('subjectmatter.create', $classroom->id) }}" method="POST">
                         @csrf
                         <div>
                             <label for="title" class="tracking-wide text-gray text-base font-bold pb-4">Title :</label>
