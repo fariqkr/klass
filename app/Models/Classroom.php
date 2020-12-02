@@ -18,4 +18,20 @@ class Classroom extends Model
         'assignments' => 'array',
         'students_joined' => 'array'
     ];
+
+    public function students() {
+        return $this->hasMany(Student::class);
+    }
+
+    public function subjectMatters() {
+        return $this->hasMany(SubjectMatter::class);
+    }
+
+    public function teacher() {
+        return $this->belongsTo(Teacher::class);
+    }
+
+    public function path() {
+        return "/teacher/classroom/{$this->id}/subject-matter";
+    }
 }

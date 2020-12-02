@@ -47,15 +47,13 @@ Route::middleware('auth.student')->group(function () {
 Route::middleware('auth.teacher')->group(function () {
     Route::get('/teacher/dashboard', [TeacherController::class, 'index'])->name('teacher.dashboard');
 
-    Route::get('/teacher/classroom/create', [ClassroomController::class, 'index'])->name('classroom.create');
+    Route::get('/teacher/classroom/create', [ClassroomController::class, 'showCreateClassroom'])->name('classroom.create');
     Route::post('/teacher/classroom/create', [ClassroomController::class, 'store']);
 
-    Route::get('/teacher/subject-matter', function () {
-        return view('teacher.course.subjectmatter');
-    });
-    Route::get('/teacher/subject-matter/create', function () {
-        return view('teacher.class.createsubjectmatter');
-    });
+    Route::get('/teacher/classroom/{classroom}/subject-matter', [ClassroomController::class, 'indexSubjectMatter'])->name('classroom.subjectmatter');
+    Route::get('/teacher/classroom/{classroom}/subject-matter/create', [ClassroomController::class, 'createSubjectMatter']);
+    Route::get('/teacher/classroom/{classroom}/subject-matter/{subject}', [ClassroomController::class, 'showSubjectMatter']);
+    // Route::post('/teacher/classroom/{classroom}/subject-matter/create', [ClassroomController::class, 'storeSubjectMatter']);
 
     Route::get('/teacher/assignment', function () {
         return view('teacher.course.assignment');

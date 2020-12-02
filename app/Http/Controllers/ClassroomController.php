@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class ClassroomController extends Controller
 {
-    public function index() {
+    public function showCreateClassroom() {
         return view('teacher.home.createclass');
     }
 
@@ -23,5 +23,21 @@ class ClassroomController extends Controller
         ]);
 
         return redirect()->route('teacher.dashboard');
+    }
+
+    public function indexSubjectMatter(Classroom $classroom) {
+        return view('teacher.course.subjectmatter', [
+            'classroom' => $classroom
+        ]);
+    }
+
+    public function showSubjectMatter(Classroom $classroom) {
+        return view('teacher.course.subjectmatter', [
+            'classroom' => $classroom
+        ]);
+    }
+
+    public function createSubjectMatter(Classroom $classroom) {
+        return view('teacher.class.createsubjectmatter');
     }
 }
