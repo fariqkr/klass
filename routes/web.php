@@ -3,6 +3,7 @@
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\ClassroomController;
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
@@ -45,9 +46,10 @@ Route::middleware('auth.student')->group(function () {
 
 Route::middleware('auth.teacher')->group(function () {
     Route::get('/teacher/dashboard', [TeacherController::class, 'index'])->name('teacher.dashboard');
-    Route::get('/teacher/createclass', function () {
-        return view('teacher.home.createclass');
-    });
+
+    Route::get('/teacher/createclass', [ClassroomController::class, 'index'])->name('classroom.createClass');
+    Route::post('/teacher/createclass', [ClassroomController::class, 'store']);
+
     Route::get('/teacher/createsubjectmatter', function () {
         return view('teacher.class.createsubjectmatter');
     });

@@ -10,13 +10,12 @@ class Classroom extends Model
     use HasFactory;
 
     protected $fillable = [
-        'name',
-        'code',
-        'detail',
-        'assignments'
+        'class_name',
+        'code'
     ];
 
     protected $casts = [
-        'assignments' => 'array'
+        'assignments' => 'array',
+        'students_joined' => 'array'
     ];
 }
