@@ -7,7 +7,7 @@
             </div>
             <div class="container">
                 <div class="flex flex-wrap flex-col md:flex-row items-center my-8 pl-12 mx-auto rounded-lg">
-                    <form action="{{ route('classroom.createClass') }}" method="POST">
+                    <form action="{{ route('classroom.create') }}" method="POST">
                         @csrf
                         <div>
                             <label for="class_name" class="tracking-wide text-gray text-base font-bold pb-4">Class Name :</label>

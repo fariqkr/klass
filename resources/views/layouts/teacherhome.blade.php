@@ -9,12 +9,12 @@
         </div>
         <div class="text-center mb-8">
             <button class="py-1 px-9 bg-blue-500 text-white rounded hover:bg-blue-700">
-                <a href="{{ route('classroom.createClass') }}">Create a class</a>
+                <a href="{{ route('classroom.create') }}">Create a class</a>
             </button>
         </div>
         <div class="text-center border-r-2 border-blue-500">
             <button class="py-1 px-9 bg-white text-black rounded">
-                <a href="#" class="text-sm">My Class</a>
+                <a href="{{ route('teacher.dashboard') }}" class="text-sm">My Class</a>
             </button>
         </div>
     </div>
@@ -26,7 +26,7 @@
     <div class="h-screen bg-white pt-6">
         <div class="flex justify-around">
             <div class="mb-6 text-black text-base text-center">
-                <a href="#">{{ auth()->guard('teacher')->user()->name }}</a>
+                <a href="{{ route('teacher.dashboard') }}">{{ auth()->guard('teacher')->user()->name }}</a>
                 <form action="{{ route('logout.teacher') }}" method="POST" class="inline">
                     @csrf
                     <button class="px-1 pb-1 bg-red-500 text-white rounded hover:bg-red-600 ml-6" type="submit">

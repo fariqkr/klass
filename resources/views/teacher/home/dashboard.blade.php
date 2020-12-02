@@ -1,9 +1,9 @@
 @extends('layouts.teacherhome')
 
 @section('maincontent')
-        <div class="container">
+        <div class="container px-5">
             <div class="mb-12 text-black text-4xl font-bold">
-                <h1 class="pl-12">My Class</h1>
+                <h1 class="">My Class</h1>
             </div>
             <div class="container w-full">
                 @if ($classrooms->count())
@@ -14,6 +14,7 @@
                                     <h1 class="text-xl text-black text-left mb-4">{{ $classroom->class_name }}</h1>
                                     <h1 class="text-sm text-blacktext-left">{{ auth('teacher')->user()->name }}</h1>
                                     <p class="text-sm text-left">{{ auth('teacher')->user()->school_name }}</p>
+                                    <p class="text-sm text-left">Code: {{ $classroom->code }}</p>
                                 </div>
                                 <div class="xl:w-3/5 overflow-y-hidden rounded-lg">
                                     <img class="w-full rounded-lg" src="{{asset('img/logo.PNG')}}">

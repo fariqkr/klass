@@ -47,29 +47,30 @@ Route::middleware('auth.student')->group(function () {
 Route::middleware('auth.teacher')->group(function () {
     Route::get('/teacher/dashboard', [TeacherController::class, 'index'])->name('teacher.dashboard');
 
-    Route::get('/teacher/createclass', [ClassroomController::class, 'index'])->name('classroom.createClass');
-    Route::post('/teacher/createclass', [ClassroomController::class, 'store']);
+    Route::get('/teacher/classroom/create', [ClassroomController::class, 'index'])->name('classroom.create');
+    Route::post('/teacher/classroom/create', [ClassroomController::class, 'store']);
 
-    Route::get('/teacher/createsubjectmatter', function () {
+    Route::get('/teacher/subject-matter', function () {
+        return view('teacher.course.subjectmatter');
+    });
+    Route::get('/teacher/subject-matter/create', function () {
         return view('teacher.class.createsubjectmatter');
     });
-    Route::get('/teacher/createassignment', function () {
+
+    Route::get('/teacher/assignment', function () {
+        return view('teacher.course.assignment');
+    });
+    Route::get('/teacher/assignment/create-form', function () {
         return view('teacher.class.createassignment');
     });
-    Route::get('/teacher/createquiztest', function () {
+    Route::get('/teacher/assignment/quiz/create', function () {
         return view('teacher.class.createquiztest');
     });
-    Route::get('/teacher/createtask', function () {
+    Route::get('/teacher/assignment/task/create', function () {
         return view('teacher.class.createtask');
     });
     Route::get('/teacher/inputtask', function () {
         return view('teacher.class.inputtask');
-    });
-    Route::get('/teacher/subjectmatter', function () {
-        return view('teacher.course.subjectmatter');
-    });
-    Route::get('/teacher/assignment', function () {
-        return view('teacher.course.assignment');
     });
     Route::get('/teacher/review', function () {
         return view('teacher.course.review');
