@@ -22,9 +22,9 @@
         <div class="container">
             <div class="flex flex-wrap flex-col md:flex-row items-center bg-white mt-2 mb-10 w-9/12 mx-auto rounded-lg">
                 <div class="flex flex-col xl:w-2/5 overflow-y-hidden lg:items-start pl-4">
-                    <h1 class="text-xl text-black text-left mb-4">Pengolahan Citra Digital</h1>
-                    <h1 class="text-sm text-blacktext-left">Wahyono, Ph.D</h1>
-                    <p class="text-sm text-left">Universitas Gadjah Mada</p>
+                    <h1 class="text-xl text-black text-left mb-4">Pemrograman</h1>
+                    <h1 class="text-sm text-blacktext-left">Melati</h1>
+                    <p class="text-sm text-left">SMAN 8 Jogja</p>
                 </div>
                 <div class="xl:w-3/5 overflow-y-hidden rounded-lg">
                     <img class="w-full rounded-lg" src="{{asset('img/logo.PNG')}}">
@@ -43,23 +43,8 @@
                 </div>
 
                 <a href="#">
-                    <div class="bg-white w-9/12 mx-auto px-4 py-4 my-6 rounded">
-                        <h1 class="text-black text-base">Lorem ipsum dolor sit amet consectetur.</h1>
-                     </div> 
-                 </a>
-                 <a href="#">
-                    <div class="bg-white w-9/12 mx-auto px-4 py-4 my-6 rounded">
-                        <h1 class="text-black text-base">Lorem ipsum, dolor sit amet consectetur adipisicing.</h1>
-                     </div> 
-                 </a>
-                 <a href="#">
-                    <div class="bg-white w-9/12 mx-auto px-4 py-4 my-6 rounded">
-                        <h1 class="text-black text-base">Lorem ipsum dolor sit amet.</h1>
-                     </div> 
-                 </a>
-                 <a href="#">
-                    <div class="bg-white w-9/12 mx-auto px-4 py-4 my-6 rounded">
-                        <h1 class="text-black text-base">Lorem ipsum dolor sit amet consectetur.</h1>
+                    <div class="bg-white w-9/12 mx-auto px-4 py-4 my-6 rounded border-2 hover:border-gray-600">
+                        <h1 class="text-black text-base">Task1</h1>
                      </div> 
                  </a>
             </div>

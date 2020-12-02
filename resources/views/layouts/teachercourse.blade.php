@@ -18,7 +18,7 @@
     </div>
     <div class="h-screen bg-white pt-6">
         <div class="mb-6 text-black text-base text-center">
-                <a href="#">{{ auth()->guard('student')->user()->name }}</a>
+                <a href="#">{{ auth()->guard('teacher')->user()->name }}</a>
                 <button class="px-1 pb-1 bg-red-500 text-white rounded hover:bg-red-600 ml-6">
                     <a href="#" class="text-xs">Logout</a>
                 </button>
