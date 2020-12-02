@@ -22,7 +22,7 @@ class LoginController extends Controller
             'password' => 'required'
         ]);
 
-        if (!Auth::guard('student')->attempt($request->only('email', 'password'))) {
+        if (!Auth::guard('student')->attempt($request->only('email', 'password'), $request->remember)) {
             return back()->with('status', 'Invalid login details');
         }
 
@@ -35,7 +35,7 @@ class LoginController extends Controller
             'password' => 'required'
         ]);
 
-        if (!Auth::guard('teacher')->attempt($request->only('email', 'password'))) {
+        if (!Auth::guard('teacher')->attempt($request->only('email', 'password'), $request->remember)) {
             return back()->with('status', 'Invalid login details');
         }
 
