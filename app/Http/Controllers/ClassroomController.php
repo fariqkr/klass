@@ -2,15 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Classroom;
 use Illuminate\Http\Request;
 
-class TeacherController extends Controller
+class ClassroomController extends Controller
 {
-    public function index() {
-        return view('teacher.home.dashboard');
-    }
-
     public function createClassroom(Request $request) {
+        Classroom::create([
 
+        ]);
     }
 }

@@ -1,12 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.teachercourse')
 
-@section('content')
-
-<div class="grid" style="grid-template-columns: 1fr 4fr 1fr;">
-    <div class="h-screen bg-white pt-6">
-        <div class="mb-12">
-            <img src="{{asset('img/logo.PNG')}}" alt="Klass" style="height: 55px;" class="mx-auto">
-        </div>
+@section('nav')
         <div class="text-center my-2 border-r-2 border-blue-500">
             <button class="py-1 px-9 bg-white text-black rounded">
                 <a href="#" class="text-sm">Subject Matter</a>
@@ -22,14 +16,15 @@
                 <a href="#" class="text-sm">Review</a>
             </button>
         </div>
-    </div>
-    <div class="bg-gray-100 pt-7">
+@endsection
+
+@section('maincontent')
         <div class="container">
             <div class="flex flex-wrap flex-col md:flex-row items-center bg-white mt-2 mb-10 w-9/12 mx-auto rounded-lg">
                 <div class="flex flex-col xl:w-2/5 overflow-y-hidden lg:items-start pl-4">
-                    <h1 class="text-xl text-black text-left mb-4">Pengolahan Citra Digital</h1>
-                    <h1 class="text-sm text-blacktext-left">Wahyono, Ph.D</h1>
-                    <p class="text-sm text-left">Universitas Gadjah Mada</p>
+                    <h1 class="text-xl text-black text-left mb-4">Pemrograman</h1>
+                    <h1 class="text-sm text-blacktext-left">Melati</h1>
+                    <p class="text-sm text-left">SMAN 8 Jogja</p>
                 </div>
                 <div class="xl:w-3/5 overflow-y-hidden rounded-lg">
                     <img class="w-full rounded-lg" src="{{asset('img/logo.PNG')}}">
@@ -48,36 +43,10 @@
                 </div>
 
                 <a href="#">
-                   <div class="bg-white w-9/12 mx-auto px-4 py-4 my-6 rounded">
-                       <h1 class="text-black text-base italic">Basics of Digital Image and their applications</h1>
+                   <div class="bg-white w-9/12 mx-auto px-4 py-4 my-6 rounded border-2 hover:border-gray-600">
+                       <h1 class="text-black text-base italic">Test</h1>
                     </div> 
                 </a>
-                <a href="#">
-                    <div class="bg-white w-9/12 mx-auto px-4 py-4 my-6 rounded">
-                        <h1 class="text-black text-base italic">Pixel-Based Image Processing</h1>
-                     </div> 
-                 </a>
-                 <a href="#">
-                    <div class="bg-white w-9/12 mx-auto px-4 py-4 my-6 rounded">
-                        <h1 class="text-black text-base italic">Image Enhancement using Filtering</h1>
-                     </div> 
-                 </a>
-                 <a href="#">
-                    <div class="bg-white w-9/12 mx-auto px-4 py-4 my-6 rounded">
-                        <h1 class="text-black text-base italic">Morphological Processing and Feature Extraction</h1>
-                     </div> 
-                 </a>
             </div>
         </div>
-    </div>
-    <div class="h-screen bg-white pt-6">
-        <div class="mb-6 text-black text-base text-center">
-                <a href="#">{{ auth()->guard('student')->user()->name }}</a>
-                <button class="px-1 pb-1 bg-red-500 text-white rounded hover:bg-red-600 ml-6">
-                    <a href="#" class="text-xs">Logout</a>
-                </button>
-        </div>
-    </div>
-</div>
-
 @endsection
