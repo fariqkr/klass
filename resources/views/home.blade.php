@@ -14,20 +14,20 @@
         <ul class="flex items-center">
             @if (auth('student')->check())
                 <li>
-                    <a href="/" class="p-3 mx-1 text-blue-500 font-bold hover:text-blue-700">{{ auth('student')->user()->name }}</a>
+                    <a href="{{ route('student.dashboard') }}" class="p-3 mx-1 text-blue-500 font-bold hover:text-blue-700">{{ auth('student')->user()->name }}</a>
                 </li>
                 <li>
-                    <form action="/" method="post" class="inline p-3 text-white bg-blue-500 rounded hover:bg-blue-700">
+                    <form action="{{ route('logout.student') }}" method="post" class="inline p-3 text-white bg-blue-500 rounded hover:bg-blue-700">
                         @csrf
                         <button type="submit">Logout</button>
                     </form>
                 </li>
             @elseif (auth('teacher')->check())
                 <li>
-                    <a href="/" class="p-3 mx-1 text-blue-500 font-bold hover:text-blue-700">{{ auth('teacher')->user()->name }}</a>
+                    <a href="{{ route('teacher.dashboard') }}" class="p-3 mx-1 text-blue-500 font-bold hover:text-blue-700">{{ auth('teacher')->user()->name }}</a>
                 </li>
                 <li>
-                    <form action="/" method="post" class="inline p-3 text-white bg-blue-500 rounded hover:bg-blue-700">
+                    <form action="{{ route('logout.teacher') }}" method="post" class="inline p-3 text-white bg-blue-500 rounded hover:bg-blue-700">
                         @csrf
                         <button type="submit">Logout</button>
                     </form>
@@ -47,9 +47,19 @@
     <div class="flex flex-col w-full xl:w-2/5 justify-center lg:items-start overflow-y-hidden">
         <h1 class="my-4 text-3xl md:text-5xl text-black font-bold leading-tight text-center md:text-left">Maintain your online classes</h1>
         <p class="text-base md:text-2xl mb-8 text-center md:text-left">Get a free and easy tool to help educators efficiently manage and assess progress, while enhancing connections with learners from school, from home, or on the go.</p>
-        <button class="p-4 bg-blue-500 text-white rounded-lg hover:bg-blue-700">
-            <a href="{{ route('register.student') }}" >Sign Up Now</a>
-        </button>
+        @if (! (auth()->guard('student')->check() || auth()->guard('teacher')->check()))
+            <a href="{{ route('register.student') }}" >
+                <button class="p-4 bg-blue-500 text-white rounded-lg hover:bg-blue-700">
+                    Sign Up Now
+                </button>
+            </a>
+        @else
+            <a href="{{ route('student.dashboard') }}" >
+                <button class="p-4 bg-blue-500 text-white rounded-lg hover:bg-blue-700">
+                    Dashboard
+                </button>
+            </a>
+        @endif
     </div>
 
     <div class="w-full xl:w-3/5 py-6 overflow-y-hidden">
