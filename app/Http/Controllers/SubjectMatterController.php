@@ -8,11 +8,7 @@ use App\Models\SubjectMatter;
 
 class SubjectMatterController extends Controller
 {
-    public function classroom() {
-        return $this->belongsTo(Classroom::class);
-    }
-
-    public function indexSubjectMatter(Classroom $classroom) {
+    public function index(Classroom $classroom) {
         $subjects = SubjectMatter::where('classroom_id', $classroom->id)->get();
 
         return view('teacher.course.subjectmatter', [
@@ -21,17 +17,17 @@ class SubjectMatterController extends Controller
         ]);
     }
 
-    public function showSubjectMatter(Classroom $classroom, SubjectMatter $subject) {
+    public function show(Classroom $classroom, SubjectMatter $subject) {
         return "a single subjectmatter: {$subject->title}";
     }
 
-    public function createSubjectMatter(Classroom $classroom) {
+    public function create(Classroom $classroom) {
         return view('teacher.class.createsubjectmatter', [
             'classroom' => $classroom
         ]);
     }
 
-    public function storeSubjectMatter(Classroom $classroom, Request $request) {
+    public function store(Classroom $classroom, Request $request) {
         $this->validate($request, [
             'title' => 'required|max:255',
             'link' => 'url',

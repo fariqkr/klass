@@ -27,6 +27,10 @@ class Classroom extends Model
         return $this->hasMany(SubjectMatter::class);
     }
 
+    public function assignments() {
+        return $this->hasMany(Assignment::class);
+    }
+
     public function teacher() {
         return $this->belongsTo(Teacher::class);
     }

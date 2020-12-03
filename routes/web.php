@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AssignmentController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\RegisterController;
@@ -51,10 +52,20 @@ Route::middleware('auth.teacher')->group(function () {
     Route::get('/teacher/classroom/create', [ClassroomController::class, 'showCreateClassroom'])->name('classroom.create');
     Route::post('/teacher/classroom/create', [ClassroomController::class, 'store']);
 
-    Route::get('/teacher/classroom/{classroom}/subject-matter', [SubjectMatterController::class, 'indexSubjectMatter'])->name('subjectmatter');
-    Route::get('/teacher/classroom/{classroom}/subject-matter/create', [SubjectMatterController::class, 'createSubjectMatter'])->name('subjectmatter.create');
-    Route::post('/teacher/classroom/{classroom}/subject-matter/create', [SubjectMatterController::class, 'storeSubjectMatter']);
-    Route::get('/teacher/classroom/{classroom}/subject-matter/{subject}', [SubjectMatterController::class, 'showSubjectMatter']);
+    Route::get('/teacher/classroom/{classroom}/subject-matter', [SubjectMatterController::class, 'index'])->name('subjectmatter');
+    Route::get('/teacher/classroom/{classroom}/subject-matter/create', [SubjectMatterController::class, 'create'])->name('subjectmatter.create');
+    Route::post('/teacher/classroom/{classroom}/subject-matter/create', [SubjectMatterController::class, 'store']);
+    Route::get('/teacher/classroom/{classroom}/subject-matter/{subject}', [SubjectMatterController::class, 'show'])->name('subjectmatter.show');
+
+    Route::get('/teacher/classroom/{classroom}/assignment', [AssignmentController::class, 'index'])->name('assignment');
+    Route::get('/teacher/classroom/{classroom}/assignment/create', [AssignmentController::class, 'create'])->name('assignment.create');
+    Route::get('/teacher/classroom/{classroom}/assignment/task/create', [AssignmentController::class, 'createTask'])->name('assignment.create.task');
+    Route::post('/teacher/classroom/{classroom}/assignment/task/create', [AssignmentController::class, 'storeTask']);
+    Route::get('/teacher/classroom/{classroom}/assignment/quiz/create', [AssignmentController::class, 'createQuiz'])->name('assignment.create.quiz');
+    Route::post('/teacher/classroom/{classroom}/assignment/quiz/create', [AssignmentController::class, 'storeQuiz']);
+    Route::get('/teacher/classroom/{classroom}/assignment/{assignment}/input', [AssignmentController::class, 'input'])->name('assignment.input');
+    Route::post('/teacher/classroom/{classroom}/assignment/{assignment}/input', [AssignmentController::class, 'storeInput']);
+    Route::get('/teacher/classroom/{classroom}/assignment/{assignment}', [AssignmentController::class, 'show']);
 
     Route::get('/teacher/assignment', function () {
         return view('teacher.course.assignment');

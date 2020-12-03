@@ -22,7 +22,7 @@
                 <h1 class="text-xl font-bold">Input the question:</h1>
             </div>
             <div class="mx-auto px-6">
-                <form action="" method="POST">
+                <form action="{{ route('assignment.input', [$classroom->id, $assignment->id]) }}" method="POST">
                     @csrf
                     <div class="mb-4">
                         <textarea name="question" id="question" cols="70" rows="10" class="bg-gray-50 border-2 border-gray-300 py-4 px-4 rounded-lg @error('question') border-red-500 @enderror" value="{{ old('question') }}">

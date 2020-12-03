@@ -3,17 +3,17 @@
 @section('nav')
         <div class="text-center my-2 border-r-2 border-blue-500">
             <button class="py-1 px-9 bg-white text-black rounded">
-                <a href="#" class="text-sm">Subject Matter</a>
+                <a href="{{ route('subjectmatter', $classroom->id) }}" class="text-sm">Subject Matter</a>
             </button>
         </div>
         <div class="text-center my-2">
             <button class="py-1 px-9 bg-white text-gray-300 rounded">
-                <a href="#" class="text-sm">Assignment</a>
+                <a href="{{ route('assignment', $classroom->id) }}" class="text-sm">Assignment</a>
             </button>
         </div>
         <div class="text-center my-2">
             <button class="py-1 px-9 bg-white text-gray-300 rounded">
-                <a href="#" class="text-sm">Review</a>
+                <a href="{{ route('subjectmatter', $classroom->id) }}" class="text-sm">Review</a>
             </button>
         </div>
 @endsection
@@ -43,7 +43,7 @@
                 </div>
 
                 @foreach ($subjects as $subject)
-                    <a href="{{ $subject->path() }}">
+                    <a href="{{ route('subjectmatter.show', [$classroom->id, $subject->id]) }}">
                     <div class="bg-white w-9/12 mx-auto px-4 py-4 my-6 rounded border-2 hover:border-gray-600">
                         <h1 class="text-black text-base italic">{{ $subject->title }}</h1>
                         </div>
