@@ -27,9 +27,13 @@ Route::get('/', function () {
 
 Route::middleware('auth.student')->group(function () {
     Route::get('/student/dashboard', [StudentController::class, 'index'])->name('student.dashboard');
-    Route::get('/student/join', function () {
-        return view('student.home.joinclass');
-    });
+
+    Route::get('/student/classroom/join', [StudentController::class, 'join'])->name('student.classroom.join');
+    Route::post('/student/classroom/join', [StudentController::class, 'link']);
+
+    Route::get('/student/classroom/{classroom}/subject-matter', [SubjectMatterController::class, 'index'])->name('student.subjectmatter');
+    Route::get('/student/classroom/{classroom}/subject-matter/{subject}', [SubjectMatterController::class, 'show'])->name('student.subjectmatter.show');
+
     Route::get('/student/subjectmatter', function () {
         return view('student.course.subjectmatter');
     });
