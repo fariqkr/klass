@@ -6,6 +6,9 @@ use App\Models\Assignment;
 use App\Models\Classroom;
 use Illuminate\Http\Request;
 
+use function PHPUnit\Framework\isEmpty;
+use function PHPUnit\Framework\isNull;
+
 class AssignmentController extends Controller
 {
     public function index(Classroom $classroom) {
@@ -61,16 +64,28 @@ class AssignmentController extends Controller
         ]);
     }
 
-    public function storeInput(Request $request) {
+    public function storeInput(Request $request, $classroom, $assignment) {
         $this->validate($request, [
             'question' => 'required'
         ]);
 
-        Assignment::create([
-            'question' => $request->question
-        ]);
+        $assignment = Assignment::where('id', $assignment)->first();
 
-        return redirect()->route('assignment');
+        if (!$assignment->questions) {
+            $questions = [];
+        } else {
+            $questions = $assignment->questions;
+        }
+
+        $questions[] = [
+            'type' => 'essay',
+            'question' => $request->question
+        ];
+
+        $assignment->questions = $questions;
+        $assignment->save();
+
+        return redirect()->route('assignment', [$classroom]);
     }
 
     public function show(Classroom $classroom) {
