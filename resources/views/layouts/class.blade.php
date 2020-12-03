@@ -6,7 +6,7 @@
     <div class="container mx-auto flex justify-between">
         <ul class="flex items-center">
             <li>
-                <a href="/" class="text-gray-400 hover:text-black">
+                <a href="{{ route('teacher.subjectmatter', [$classroom->id]) }}" class="text-gray-400 hover:text-black">
                     Back to Class
                 </a>
             </li>

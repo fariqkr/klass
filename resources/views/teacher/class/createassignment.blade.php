@@ -3,17 +3,17 @@
 @section('nav')
         <div class="text-center my-2">
             <button class="py-1 px-9 bg-white text-gray-300 rounded">
-                <a href="{{ route('subjectmatter', $classroom->id) }}" class="text-sm">Subject Matter</a>
+                <a href="{{ route('teacher.subjectmatter', $classroom->id) }}" class="text-sm">Subject Matter</a>
             </button>
         </div>
         <div class="text-center my-2 border-r-2 border-blue-500">
             <button class="py-1 px-9 bg-white text-black rounded">
-                <a href="{{ route('assignment', $classroom->id) }}" class="text-sm">Assignment</a>
+                <a href="{{ route('teacher.assignment', $classroom->id) }}" class="text-sm">Assignment</a>
             </button>
         </div>
         <div class="text-center my-2">
             <button class="py-1 px-9 bg-white text-gray-300 rounded">
-                <a href="{{ route('subjectmatter', $classroom->id) }}" class="text-sm">Review</a>
+                <a href="{{ route('teacher.review', $classroom->id) }}" class="text-sm">Review</a>
             </button>
         </div>
 @endsection
@@ -36,12 +36,12 @@
                 </div>
 
                 <div class="container flex flex-nowrap justify-center gap-8">
-                        <a href="{{ route('assignment.create.quiz', $classroom->id) }}">
+                        <a href="{{ route('teacher.assignment.create.quiz', $classroom->id) }}">
                             <div class="bg-white my-6 rounded flex col justify-center items-center bg-blue-100 hover:bg-blue-300" style="width: 20rem; height: 20rem;">
                                 <h1 class="text-black text-small font-bold">Quiz / Test</h1>
                             </div>
                         </a>
-                        <a href="{{ route('assignment.create.task', $classroom->id) }}">
+                        <a href="{{ route('teacher.assignment.create.task', $classroom->id) }}">
                             <div class="bg-white my-6 rounded flex col justify-center items-center bg-green-100 hover:bg-green-300" style="width: 20rem; height: 20rem;">
                                 <h1 class="text-black text-small font-bold">Task</h1>
                             </div>

@@ -40,6 +40,6 @@ class SubjectMatterController extends Controller
             'content' => $request->content
         ]);
 
-        return redirect()->route('subjectmatter', $classroom->id);
+        return redirect()->route('teacher.subjectmatter', $classroom->id);
     }
 }

@@ -4,7 +4,7 @@
 
 <div class="flex flex-col container w-5/6 mx-auto my-4 py-8 px-16 border-2 border-gray-100 gap-4">
     <div class="text-center">
-        <h1 class="text-2xl bg-gray-50 font-bold mx-auto py-4">Task1</h1>
+        <h1 class="text-2xl bg-gray-50 font-bold mx-auto py-4">{{ $assignment->title }}</h1>
     </div>
     <div class="flex flex-row gap-4">
         <div class="bg-gray-50 w-1/3 h-full">
@@ -22,7 +22,7 @@
                 <h1 class="text-xl font-bold">Input the question:</h1>
             </div>
             <div class="mx-auto px-6">
-                <form action="{{ route('assignment.input', [$classroom->id, $assignment->id]) }}" method="POST">
+                <form action="{{ route('teacher.assignment.input', [$classroom->id, $assignment->id]) }}" method="POST">
                     @csrf
                     <div class="mb-4">
                         <textarea name="question" id="question" cols="70" rows="10" class="bg-gray-50 border-2 border-gray-300 py-4 px-4 rounded-lg @error('question') border-red-500 @enderror" value="{{ old('question') }}">

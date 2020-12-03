@@ -54,7 +54,7 @@ class AssignmentController extends Controller
             'is_task' => false
         ]);
 
-        return redirect()->route('assignment', $classroom->id);
+        return redirect()->route('teacher.assignment', $classroom->id);
     }
 
     public function input(Classroom $classroom, Assignment $assignment) {
@@ -85,7 +85,7 @@ class AssignmentController extends Controller
         $assignment->questions = $questions;
         $assignment->save();
 
-        return redirect()->route('assignment', [$classroom]);
+        return redirect()->route('teacher.assignment', [$classroom]);
     }
 
     public function show(Classroom $classroom) {

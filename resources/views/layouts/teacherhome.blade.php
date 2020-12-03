@@ -9,7 +9,7 @@
         </div>
         <div class="text-center mb-8">
             <button class="py-1 px-9 bg-blue-500 text-white rounded hover:bg-blue-700">
-                <a href="{{ route('classroom.create') }}">Create a class</a>
+                <a href="{{ route('teacher.classroom.create') }}">Create a class</a>
             </button>
         </div>
         <div class="text-center border-r-2 border-blue-500">
