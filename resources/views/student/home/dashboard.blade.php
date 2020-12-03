@@ -8,7 +8,7 @@
             <div class="container w-full">
                 @if ($classrooms->count())
                     @foreach ($classrooms as $classroom)
-                        <a href="#">
+                        <a href="{{ route('student.subjectmatter', $classroom->id) }}">
                             <div class="flex flex-wrap flex-col md:flex-row items-center bg-white my-8 w-9/12 mx-auto rounded-lg border-2 hover:border-gray-600">
                                 <div class="flex flex-col xl:w-2/5 overflow-y-hidden lg:items-start pl-4">
                                     <h1 class="text-xl text-black text-left mb-4">{{ $classroom->class_name }}</h1>

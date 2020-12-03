@@ -23,8 +23,8 @@
             <div class="flex flex-wrap flex-col md:flex-row items-center bg-white mt-2 mb-10 w-9/12 mx-auto rounded-lg">
                 <div class="flex flex-col xl:w-2/5 overflow-y-hidden lg:items-start pl-4">
                     <h1 class="text-xl text-black text-left mb-4">{{ $classroom->class_name }}</h1>
-                    <h1 class="text-sm text-blacktext-left">{{ auth('teacher')->user()->name }}</h1>
-                    <p class="text-sm text-left">{{ auth('teacher')->user()->school_name }}</p>
+                    <h1 class="text-sm text-blacktext-left">{{ $classroom->teacher->name }}</h1>
+                    <p class="text-sm text-left">{{ $classroom->teacher->school_name }}</p>
                 </div>
                 <div class="xl:w-3/5 overflow-y-hidden rounded-lg">
                     <img class="w-full rounded-lg" src="{{asset('img/logo.PNG')}}">

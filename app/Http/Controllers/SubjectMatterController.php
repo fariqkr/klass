@@ -11,14 +11,29 @@ class SubjectMatterController extends Controller
     public function index(Classroom $classroom) {
         $subjects = SubjectMatter::where('classroom_id', $classroom->id)->get();
 
-        return view('teacher.course.subjectmatter', [
+        if (auth('student')->check()) {
+            $view = 'student.course.subjectmatter';
+        } else {
+            $view = 'teacher.course.subjectmatter';
+        }
+
+        return view($view, [
             'classroom' => $classroom,
             'subjects' => $subjects
         ]);
     }
 
     public function show(Classroom $classroom, SubjectMatter $subject) {
-        return "a single subjectmatter: {$subject->title}";
+        if (auth('student')->check()) {
+            $view = 'student.class.subjectmatter';
+        } else {
+            $view = 'teacher.class.subjectmatter';
+        }
+
+        return view($view, [
+            'classroom' => $classroom,
+            'subject' => $subject
+        ]);
     }
 
     public function create(Classroom $classroom) {
@@ -30,16 +45,32 @@ class SubjectMatterController extends Controller
     public function store(Classroom $classroom, Request $request) {
         $this->validate($request, [
             'title' => 'required|max:255',
-            'link' => 'url',
+            'videolink' => 'url',
             'content' => 'required'
         ]);
 
+        $videolink = $this->getYoutubeEmbedUrl($request->videolink);
+
         $classroom->subjectMatters()->create([
             'title' => $request->title,
-            'link' => $request->link,
+            'url' => $videolink,
             'content' => $request->content
         ]);
 
         return redirect()->route('teacher.subjectmatter', $classroom->id);
+    }
+
+    private function getYoutubeEmbedUrl($url) {
+         $shortUrlRegex = '/youtu.be\/([a-zA-Z0-9_-]+)\??/i';
+         $longUrlRegex = '/youtube.com\/((?:embed)|(?:watch))((?:\?v\=)|(?:\/))([a-zA-Z0-9_-]+)/i';
+
+        if (preg_match($longUrlRegex, $url, $matches)) {
+            $youtube_id = $matches[count($matches) - 1];
+        }
+
+        if (preg_match($shortUrlRegex, $url, $matches)) {
+            $youtube_id = $matches[count($matches) - 1];
+        }
+        return 'https://www.youtube.com/embed/' . $youtube_id ;
     }
 }

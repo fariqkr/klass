@@ -34,21 +34,10 @@ Route::middleware('auth.student')->group(function () {
     Route::get('/student/classroom/{classroom}/subject-matter', [SubjectMatterController::class, 'index'])->name('student.subjectmatter');
     Route::get('/student/classroom/{classroom}/subject-matter/{subject}', [SubjectMatterController::class, 'show'])->name('student.subjectmatter.show');
 
-    Route::get('/student/subjectmatter', function () {
-        return view('student.course.subjectmatter');
-    });
-    Route::get('/student/subjectmatter/Test', function () {
-        return view('student.class.subjectmatter');
-    });
-    Route::get('/student/assignment', function () {
-        return view('student.course.assignment');
-    });
-    Route::get('/student/assignment/Task1', function () {
-        return view('student.class.task');
-    });
-    Route::get('/student/review', function () {
-        return view('student.course.review');
-    });
+    Route::get('/student/classroom/{classroom}/assignment', [AssignmentController::class, 'index'])->name('student.assignment');
+    Route::get('/student/classroom/{classroom}/assignment/{assignment}', [AssignmentController::class, 'show']);
+
+    Route::get('/student/classroom/{classroom}/review', [ReviewController::class, 'index'])->name('student.review');
 });
 
 Route::middleware('auth.teacher')->group(function () {
