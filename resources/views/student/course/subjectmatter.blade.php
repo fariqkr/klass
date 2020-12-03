@@ -31,13 +31,6 @@
                 </div>
             </div>
             <div class="container w-full">
-                <a href="{{ route('student.subjectmatter.create', $classroom->id) }}">
-                    <div class="bg-white w-4/12 mx-auto my-6 rounded flex bg-gray-200 hover:bg-gray-300">
-                        <h1 class="text-black text-base w-10/12 px-4 py-4">Create New Subject Matter</h1>
-                        <h1 class="text-black text-base italic font-extrabold w-2/12 px-4 py-4">+</h1>
-                     </div>
-                 </a>
-
                 <div class="my-4 text-black text-xl font-bold mx-auto w-9/12">
                     <h1>Subject Matter :</h1>
                 </div>

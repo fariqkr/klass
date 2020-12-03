@@ -14,7 +14,13 @@ class AssignmentController extends Controller
     public function index(Classroom $classroom) {
         $assignments = Assignment::where('classroom_id', $classroom->id)->get();
 
-        return view('teacher.course.assignment', [
+        if (auth('student')->check()) {
+            $view = 'student.course.assignment';
+        } else {
+            $view = 'teacher.course.assignment';
+        }
+
+        return view($view, [
             'classroom' => $classroom,
             'assignments' => $assignments
         ]);
@@ -88,7 +94,27 @@ class AssignmentController extends Controller
         return redirect()->route('teacher.assignment', [$classroom]);
     }
 
-    public function show(Classroom $classroom) {
-        return 'show single task or quiz';
+    public function show(Classroom $classroom, Assignment $assignment) {
+        if (auth('student')->check()) {
+            $view = 'student.class.task';
+        } else {
+            $view = 'teacher.class.task';
+        }
+
+        $questions = $assignment->questions;
+
+        return view($view, [
+            'classroom' => $classroom,
+            'assignment' => $assignment,
+            'questions' => $questions
+        ]);
+    }
+
+    public function answer(Request $request, Classroom $classroom) {
+        $this->validate($request, [
+            'answer' => 'required|max:255'
+        ]);
+
+        return redirect()->route('student.assignment', $classroom->id);
     }
 }

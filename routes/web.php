@@ -35,7 +35,8 @@ Route::middleware('auth.student')->group(function () {
     Route::get('/student/classroom/{classroom}/subject-matter/{subject}', [SubjectMatterController::class, 'show'])->name('student.subjectmatter.show');
 
     Route::get('/student/classroom/{classroom}/assignment', [AssignmentController::class, 'index'])->name('student.assignment');
-    Route::get('/student/classroom/{classroom}/assignment/{assignment}', [AssignmentController::class, 'show']);
+    Route::get('/student/classroom/{classroom}/assignment/{assignment}', [AssignmentController::class, 'show'])->name('student.assignment.show');
+    Route::post('/student/classroom/{classroom}/assignment/{assignment}', [AssignmentController::class, 'answer']);
 
     Route::get('/student/classroom/{classroom}/review', [ReviewController::class, 'index'])->name('student.review');
 });
