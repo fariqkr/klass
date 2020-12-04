@@ -20,6 +20,7 @@ class CreateAssignmentsTable extends Migration
             $table->unsignedSmallInteger('number_of_essay');
             $table->boolean('is_task');
             $table->json('questions')->nullable();
+            $table->boolean('is_answered')->default(false);
 
             $table->foreignId('classroom_id')->constrained()->onDelete('cascade');
             $table->timestamps();

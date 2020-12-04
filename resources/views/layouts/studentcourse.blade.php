@@ -14,14 +14,17 @@
     <div class="bg-gray-100 pt-7">
 
         @yield('maincontent')
-        
+
     </div>
     <div class="h-screen bg-white pt-6">
         <div class="mb-6 text-black text-base text-center">
-                <a href="#">{{ auth()->guard('student')->user()->name }}</a>
-                <button class="px-1 pb-1 bg-red-500 text-white rounded hover:bg-red-600 ml-6">
-                    <a href="#" class="text-xs">Logout</a>
+            <a href="{{ route('student.dashboard') }}">{{ auth()->guard('student')->user()->name }}</a>
+            <form action="{{ route('logout.student') }}" method="POST" class="inline">
+                @csrf
+                <button class="px-1 pb-1 bg-red-500 text-white rounded hover:bg-red-600 ml-6" type="submit">
+                    Logout
                 </button>
+            </form>
         </div>
     </div>
 </div>

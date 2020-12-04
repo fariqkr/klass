@@ -36,12 +36,21 @@
             </div>
 
             @foreach ($assignments as $assignment)
+
+                @if ($assignment->is_answered == true)
+                    <div class="bg-white w-9/12 mx-auto my-6 rounded flex border-2 hover:border-gray-600">
+                        <h1 class="text-black text-base w-9/12 px-4 py-4">{{ $assignment->title }}</h1>
+                        <h1 class="text-black text-small italic font-bold w-3/12 bg-green-300 px-4 py-4">Finished</h1>
+                    </div>
+                @else
                 <a href="{{ route('student.assignment.show', [$classroom->id, $assignment->id]) }}">
                     <div class="bg-white w-9/12 mx-auto my-6 rounded flex border-2 hover:border-gray-600">
                         <h1 class="text-black text-base w-9/12 px-4 py-4">{{ $assignment->title }}</h1>
                         <h1 class="text-black text-small italic font-bold w-3/12 bg-gray-200 px-4 py-4">Available</h1>
                     </div>
                 </a>
+                @endif
+
             @endforeach
 
             </div>

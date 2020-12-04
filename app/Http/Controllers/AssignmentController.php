@@ -110,10 +110,14 @@ class AssignmentController extends Controller
         ]);
     }
 
-    public function answer(Request $request, Classroom $classroom) {
+    public function answer(Request $request, Classroom $classroom, Assignment $assignment) {
         $this->validate($request, [
             'answer' => 'required|max:255'
         ]);
+
+        $assignment = Assignment::where('id', $assignment->id)->first();
+        $assignment->is_answered = true;
+        $assignment->save();
 
         return redirect()->route('student.assignment', $classroom->id);
     }

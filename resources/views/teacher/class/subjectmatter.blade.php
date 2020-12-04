@@ -6,7 +6,7 @@
         <iframe class="mx-auto mb-16" width="720" height="405" src="{{ $subject->url }}">
         </iframe>
         <div class="mx-auto" style="width: 720px;">
-            <p class="text-xl">Lorem ipsum dolor sit amet</p>
+            <p class="text-xl">{{ $subject->content }}</p>
         </div>
     </div>
 @endsection
