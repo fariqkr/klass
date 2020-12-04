@@ -7,16 +7,16 @@
             </div>
             <div class="container">
                 <div class="flex flex-wrap flex-col md:flex-row items-center my-8 pl-12 mx-auto rounded-lg">
-                    <form action="" method="POST">
+                    <form action="{{ route('teacher.classroom.create') }}" method="POST">
                         @csrf
                         <div>
-                            <label for="classname" class="tracking-wide text-gray text-base font-bold pb-4">Class Name :</label>
+                            <label for="class_name" class="tracking-wide text-gray text-base font-bold pb-4">Class Name :</label>
                         </div>
                         <div class="mb-4">
-                            <input type="text" name="classname" id="classname" placeholder="Input your class name"
-                            class="bg-gray-100 border-2 border-blue-400 mt-4 py-4 px-4 rounded-lg @error('classname') border-red-500 @enderror" value="{{ old('classname') }}" style="width: 32rem">
+                            <input type="text" name="class_name" id="class_name" placeholder="Input your class name"
+                            class="bg-gray-100 border-2 border-blue-400 mt-4 py-4 px-4 rounded-lg @error('class_name') border-red-500 @enderror" value="{{ old('class_name') }}" style="width: 32rem">
 
-                            @error('classname')
+                            @error('class_name')
                                 <div class="text-red-500 mt-2 text-base">
                                     {{ $message }}
                                 </div>

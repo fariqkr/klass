@@ -9,12 +9,12 @@
         </div>
         <div class="text-center mb-8">
             <button class="py-1 px-9 bg-blue-500 text-white rounded hover:bg-blue-700">
-                <a href="#">Join a class</a>
+                <a href="{{ route('student.classroom.join') }}">Join a class</a>
             </button>
         </div>
         <div class="text-center border-r-2 border-blue-500">
             <button class="py-1 px-9 bg-white text-black rounded">
-                <a href="#" class="text-sm">My Class</a>
+                <a href="{{ route('student.dashboard') }}" class="text-sm">My Class</a>
             </button>
         </div>
     </div>
